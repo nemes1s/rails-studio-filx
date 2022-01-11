@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+## Workadounds
+
+- Before `rails s` run `export NODE_OPTIONS=--openssl-legacy-provider`
