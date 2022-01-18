@@ -1,9 +1,16 @@
 <% @movies.each do |movie| %>
   <section class="movie">
     <div class="summary">
-      <h2><%= movie.title %></h2>
+      <h2><%= link_to movie.title, movie %></h2>
       <h3><%= total_gross(movie) %></h3>
       <p><%= movie.description.truncate(40, separator: ' ') %></p>
+      <p class="actions">
+        <%= link_to 'Edit', edit_movie_path(movie) %> |
+        <%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
     </div>
   </section>
 <% end %>
+<section class="admin">
+  <%= link_to 'Add new movie', new_movie_path, class: "button" %>
+</section>
